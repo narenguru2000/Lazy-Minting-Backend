@@ -5,16 +5,16 @@ export type nftDocument = HydratedDocument<nft>;
 
 @Schema()
 export class nft {
-  @Prop()
-  tokenId: string;
+  @Prop({ required: true, unique: true })
+  tokenId: number;
 
-  @Prop()
-  uri: number;
+  @Prop({ required: true })
+  uri: string;
 
-  @Prop()
-  minPrice: string;
+  @Prop({ required: true })
+  minPrice: number;
 
-  @Prop()
+  @Prop({ required: true })
   signature: string;
 }
 
